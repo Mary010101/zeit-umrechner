@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Minuten-Dezimalstunden Umrechner</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 2em; }
+  label, input { display: block; margin: 0.5em 0; }
+  input { width: 150px; }
+</style>
+</head>
+<body>
+  <h1>Minuten &lt;-&gt; Dezimalstunden Umrechner</h1>
+  
+  <label for="minuten">Minuten:</label>
+  <input type="number" id="minuten" placeholder="z.B. 90" />
+
+  <label for="dezimalstunden">Dezimalstunden:</label>
+  <input type="number" id="dezimalstunden" step="0.01" placeholder="z.B. 1.5" />
+
+  <script>
+    const minutenInput = document.getElementById('minuten');
+    const dezimalstundenInput = document.getElementById('dezimalstunden');
+
+    minutenInput.addEventListener('input', () => {
+      let min = parseFloat(minutenInput.value);
+      if (!isNaN(min)) {
+        dezimalstundenInput.value = (min / 60).toFixed(2);
+      } else {
+        dezimalstundenInput.value = '';
+      }
+    });
+
+    dezimalstundenInput.addEventListener('input', () => {
+      let dez = parseFloat(dezimalstundenInput.value);
+      if (!isNaN(dez)) {
+        minutenInput.value = Math.round(dez * 60);
+      } else {
+        minutenInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
