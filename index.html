@@ -8,12 +8,14 @@
   body { font-family: Arial, sans-serif; margin: 2em; background: #fff; }
   
   /* Der hellgrüne Kasten */
-  .rechner-box {
-    background-color: #d4edda; /* Hellgrün */
-    border-radius: 12px;       /* Abgerundete Ecken */
-    padding: 20px;
-    max-width: 300px;
-  }
+ .rechner-box {
+  background-color: #d4edda;
+  border-radius: 12px;
+  padding: 20px;
+  width: 50%;          /* Setzt Breite auf 50% der übergeordneten Breite */
+  max-width: 300px;     /* Optional, um nicht zu breit zu werden */
+  box-sizing: border-box; /* Damit Padding zur Breite dazugerechnet wird */
+}
   
   label, input {
     display: block;
@@ -61,5 +63,6 @@
   </script>
 </body>
 </html>
+
 
 
